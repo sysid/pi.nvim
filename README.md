@@ -4,7 +4,7 @@ A Neovim plugin for interacting with [pi](https://pi.dev) - the minimal terminal
 
 <p align="center">
 <a href="https://asciinema.org/a/k7XHTrbWKHp3dOAF?autoplay=1">
-  <img src="https://github.com/pablopunk/pi.nvim/blob/main/assets/asciinema.gif?raw=true" width="100%" />
+  <img src="https://github.com/pablopunk/pi.nvim/blob/main/assets/asciinema.gif?raw=true&forceUpdate" width="100%" />
 </a>
 </p>
 
