@@ -5,7 +5,7 @@ M.config = {
   model = "openrouter/free",
 }
 
-local loading_spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
 
 local SYSTEM_PROMPT =
   [[You are running inside the pi.nvim Neovim plugin. The user has sent a request and will not be able to reply back. You must complete the task immediately without asking any questions or requesting clarification. Take action now and do what was asked.]]
@@ -86,7 +86,7 @@ local function update_spinner(status_text)
     return
   end
 
-  local spinner_char = loading_spinner[state.spinner_idx % #loading_spinner + 1]
+  local spinner_char = spinner[state.spinner_idx % #spinner + 1]
   state.spinner_idx = state.spinner_idx + 1
 
   local virt_text = { { spinner_char .. " " .. status_text, "Comment" } }
@@ -141,9 +141,7 @@ local function handle_event(data)
 
   local event_type = event.type
 
-  if event_type == "agent_start" then
-    start_spinner("Thinking...")
-  elseif event_type == "message_update" then
+  if event_type == "message_update" then
     local delta = event.assistantMessageEvent
     if delta and delta.type == "thinking_delta" then
       update_spinner("Thinking...")
@@ -182,6 +180,7 @@ function M.send(message, context)
 
   state.spinner_idx = 1
   state.buf, state.win = create_output_window()
+  start_spinner("Thinking...")
 
   local cmd = get_pi_cmd()
 
