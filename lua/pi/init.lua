@@ -8,14 +8,7 @@ M.config = {
 local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
 
 local SYSTEM_PROMPT =
-  [[You are a highly capable AI assistant operating within the pi.nvim Neovim plugin.
-The user has provided a task and expects an immediate, unprompted response.
-Do not ask clarifying questions or engage in a conversation.
-Your goal is to understand the request based on the provided context (file content, visual selection) and execute it directly using the available tools.
-If you need to make changes to a file, use the 'edit' tool for precise modifications. If you need to create a new file or completely overwrite an existing one, use the 'write' tool.
-When using the 'edit' tool, the 'oldText' argument must exactly match the content in the file. Be precise with whitespace and line endings.
-Focus on completing the task efficiently and effectively without further interaction.
-The user will not be able to reply to any questions or prompts you might issue.]]
+  [[You are running inside the pi.nvim Neovim plugin. The user has sent a request and will not be able to reply back. You must complete the task immediately without asking any questions or requesting clarification. Take action now and do what was asked.]]
 
 local state = {
   job = nil,
