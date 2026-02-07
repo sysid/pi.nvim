@@ -44,10 +44,18 @@ MiniDeps.add("pablopunk/pi.nvim")
 
 ## Config
 
+Provider and model are optional - pi will use your default configuration if not specified:
+
+```lua
+require("pi").setup()
+```
+
+Or override with specific values:
+
 ```lua
 require("pi").setup({
   provider = "openrouter",
-  model = "openrouter/free", -- default
+  model = "openrouter/free",
 })
 ```
 

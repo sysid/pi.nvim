@@ -1,8 +1,8 @@
 local M = {}
 
 M.config = {
-  provider = "openrouter",
-  model = "openrouter/free",
+  provider = nil,
+  model = nil,
 }
 
 local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
