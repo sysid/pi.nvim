@@ -98,8 +98,8 @@ vim.keymap.set("v", "<leader>ai", ":PiAskSelection<CR>", { desc = "Ask pi (selec
 
 | Command | Mode | Description |
 |---------|------|-------------|
-| `:PiAsk` | Normal | Prompt for input, sends with full buffer as context |
-| `:PiAskSelection` | Visual | Prompt for input, sends with visual selection as context |
+| `:PiAsk` | Normal | Prompt for input, sends it + current buffer as context |
+| `:PiAskSelection` | Visual | Same as :PiAsk but also sends selected lines as context |
 
 
 ## License
